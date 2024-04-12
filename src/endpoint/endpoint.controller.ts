@@ -10,7 +10,10 @@ import {
 import { EndpointService } from './endpoint.service';
 import { CreateEndpointDto } from './dto/create-endpoint.dto';
 import { UpdateEndpointDto } from './dto/update-endpoint.dto';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
+@ApiBearerAuth()
+@ApiTags('endpoint')
 @Controller('endpoint')
 export class EndpointController {
   constructor(private readonly endpointService: EndpointService) {}

@@ -10,6 +10,7 @@ export class EndpointService {
   constructor(
     @InjectModel(Product.name) private productModule: Model<ProductDocument>,
   ) {}
+
   async create(createEndpointDto: CreateEndpointDto) {
     const createdProduct = await this.productModule.create(createEndpointDto);
     return createdProduct.save();
@@ -18,6 +19,7 @@ export class EndpointService {
     const products = await this.productModule.find({});
     return products;
   }
+
   async findOne(id: string) {
     let product = Product;
     if (!isNaN(Number(id)))
@@ -32,6 +34,7 @@ export class EndpointService {
 
     return product;
   }
+
   async update(id: string, updateEndpointDto: UpdateEndpointDto) {
     if (isValidObjectId(id)) {
       return await this.productModule.findByIdAndUpdate(id, updateEndpointDto, {
