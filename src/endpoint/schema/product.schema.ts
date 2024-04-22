@@ -9,7 +9,7 @@ export class Product {
   name: string;
 
   @Prop()
-  quantity: number;
+  price: number;
 
   @Prop()
   availability: boolean;

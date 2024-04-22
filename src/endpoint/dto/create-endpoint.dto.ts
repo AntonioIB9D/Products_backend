@@ -6,7 +6,7 @@ export class CreateEndpointDto {
   name: string;
 
   @IsNumber()
-  quantity: number;
+  price: number;
 
   @IsBoolean()
   availability: boolean;
